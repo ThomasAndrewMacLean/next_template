@@ -1,0 +1,45 @@
+{
+  "name": "bumperballs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasAndrewMacLean/bumperballs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasAndrewMacLean/bumperballs/issues"
+  },
+  "homepage": "https://github.com/ThomasAndrewMacLean/bumperballs#readme",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "airtable": "^0.8.1",
+    "babel-plugin-styled-components": "^1.10.7",
+    "dayjs": "^1.8.24",
+    "dotenv": "^8.2.0",
+    "marked": "^0.8.2",
+    "next": "^9.3.3",
+    "nodemailer": "^6.4.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.0.1",
+    "zustand": "^2.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "prettier": "^2.0.2"
+  }
+}

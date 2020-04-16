@@ -4,4 +4,7 @@ add keys to .env (and to github secrets)
 
 add script to block in airtable to trigger deployment
 
-change prefix in next.config if we want to deploy to gh pages
+find and replace every bumperballs with the name of your new repo
+
+
+Add secrets (airtable app, airtable api key, github deploy token) to github secrets

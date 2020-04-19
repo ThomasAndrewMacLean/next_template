@@ -8,3 +8,12 @@ find and replace every bumperballs with the name of your new repo
 
 
 Add secrets (airtable app, airtable api key, github deploy token) to github secrets
+
+
+
+For forms => 
+copy project in a & g =>
+create new sheet, 
+copy sheet id in google cloud function
+add email to google sheet share
+add allUsers to cloud function

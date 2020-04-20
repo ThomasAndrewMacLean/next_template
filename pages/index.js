@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import T from '../components/Translation';
+import { T } from '../components';
 import { useStore } from '../store';
 import { HELLOWORLD } from '../constants';
 import { add } from '../utils';

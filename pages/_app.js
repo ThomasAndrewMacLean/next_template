@@ -25,15 +25,23 @@ function MyApp({ Component, pageProps, translations, pics }) {
 // be server-side rendered.
 //
 MyApp.getInitialProps = async (appContext) => {
-  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  const url =
+    'https://europe-west1-thomasmaclean.cloudfunctions.net/getDataAirtable';
+  const dataFromAirtableJson = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ airtableApp: process.env.AIRTABLE_APP }),
+  });
+  const dataFromAirtable = await dataFromAirtableJson.json();
   const appProps = await App.getInitialProps(appContext);
-  const texts = await base('Text').select().all();
-  const pics = await base('Images').select().all();
 
+  //console.log(dataFromAirtable);
   return {
     ...appProps,
-    translations: texts.map((x) => x.fields),
-    pics: pics.map((x) => x.fields),
+    ...dataFromAirtable,
   };
 };
 

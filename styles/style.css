@@ -11,7 +11,9 @@
   box-sizing: border-box;
   touch-action: manipulation;
 }
-
+::selection {
+  background: var(--background-light); /* WebKit/Blink Browsers */
+}
 html,
 body {
   font-family: 'Roboto Slab', sans-serif;
@@ -19,3 +21,12 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+ul {
+  margin-left: 2rem;
+  padding-bottom: 1rem;
+}
+
+li {
+  padding-bottom: 0.5rem;
+}
+

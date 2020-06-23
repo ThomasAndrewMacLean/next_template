@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="manifest" href={`${prefix}/manifest.json`} />
 
-          <meta name="application-name" content="Westerling &amp; MacLean" />
+          <meta name="application-name" content="bumperballs" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
@@ -35,9 +35,9 @@ export default class MyDocument extends Document {
           />
           <meta
             name="apple-mobile-web-app-title"
-            content="Westerling &amp; MacLean"
+            content="bumperballs"
           />
-          <meta name="description" content="Westerling &amp; MacLean" />
+          <meta name="description" content="bumperballs" />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           {/* <meta
@@ -82,8 +82,8 @@ export default class MyDocument extends Document {
 
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:url" content="https://bumperballs.be" />
-          <meta name="twitter:title" content="Westerling &amp; MacLean" />
-          <meta name="twitter:description" content="Westerling &amp; MacLean" />
+          <meta name="twitter:title" content="bumperballs" />
+          <meta name="twitter:description" content="bumperballs" />
           <meta
             name="twitter:image"
             content="https://bumperballs.be/android-chrome-192x192.png"
@@ -91,9 +91,9 @@ export default class MyDocument extends Document {
           {/*
 <meta name="twitter:creator" content="@DavidWShadow" /> */}
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Westerling &amp; MacLean" />
-          <meta property="og:description" content="Westerling &amp; MacLean" />
-          <meta property="og:site_name" content="Westerling &amp; MacLean" />
+          <meta property="og:title" content="bumperballs" />
+          <meta property="og:description" content="bumperballs" />
+          <meta property="og:site_name" content="bumperballs" />
           <meta property="og:url" content="https://bumperballs.be" />
           <meta
             property="og:image"

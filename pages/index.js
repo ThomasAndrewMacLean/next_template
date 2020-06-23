@@ -12,14 +12,14 @@ const IndexPage = () => {
   return (
     <Main>
       <Head>
-        <title>BMS Rent</title>
+        <title>bumperballs</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </Head>
       <h1>{HELLOWORLD}</h1>
-      <T id="test"></T>
+      <T key="test"></T>
       <button onClick={countPlusOne}>+</button>
       {count}+ 1 = {add(count, 1)}
     </Main>

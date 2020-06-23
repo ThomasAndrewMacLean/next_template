@@ -3,7 +3,7 @@ import marked from 'marked';
 import { TranslationContext } from '../pages/_app';
 import PropTypes from 'prop-types';
 
-const Translation = ({ id }) => {
+const Translation = ({ key }) => {
   const [showKeys, setShowKeys] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -13,19 +13,19 @@ const Translation = ({ id }) => {
     }
   }, []);
   const translationsFromContext = useContext(TranslationContext);
-  const translation = translationsFromContext.find((t) => t.id === id);
+  const translation = translationsFromContext.find((t) => t.id === key);
   return (
     <span
       className={showKeys ? 'showKeys' : ''}
       dangerouslySetInnerHTML={{
-        __html: marked(translation && !showKeys ? translation.NL : id),
+        __html: marked(translation && !showKeys ? translation.NL : key),
       }}
     ></span>
   );
 };
 
 Translation.propTypes = {
-  id: PropTypes.string.isRequired,
+  key: PropTypes.string.isRequired,
 };
 
 export default Translation;

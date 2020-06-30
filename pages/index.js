@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import { T } from '../components';
+import { T, Image } from '../components';
 import { useStore } from '../store';
 import { HELLOWORLD } from '../constants';
 import { add } from '../utils';
@@ -19,8 +19,9 @@ const IndexPage = () => {
         />
       </Head>
       <h1>{HELLOWORLD}</h1>
-      <T key="test"></T>
+      <T translationKey="test"></T>
       <button onClick={countPlusOne}>+</button>
+      <Image imageKey="16"></Image>
       {count}+ 1 = {add(count, 1)}
     </Main>
   );

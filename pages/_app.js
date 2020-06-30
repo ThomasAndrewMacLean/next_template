@@ -1,16 +1,14 @@
 import App from 'next/app';
-import React, { createContext } from 'react';
+import React from 'react';
 import '../styles/style.css';
-
-export const TranslationContext = createContext([]);
-export const PictureContext = createContext([]);
+import { PictureContext, TranslationContext } from '../utils/contexts';
 
 function MyApp({ Component, pageProps, translations, pics }) {
   return (
     <PictureContext.Provider value={pics}>
       <TranslationContext.Provider value={translations}>
         <Component {...pageProps} />
-      </TranslationContext.Provider>{' '}
+      </TranslationContext.Provider>
     </PictureContext.Provider>
   );
 }

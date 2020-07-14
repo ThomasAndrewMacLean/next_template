@@ -10,6 +10,7 @@ type LayoutProps = {
   page: string;
 };
 const Layout = ({ children, page }: LayoutProps) => {
+  console.log('prefix', prefix);
   return (
     <Main>
       <Header>
@@ -23,6 +24,11 @@ const Layout = ({ children, page }: LayoutProps) => {
             </li>
             <li>
               <NavLink active={page === prefix + 'contact'} href="/contact">
+                <T translationKey="contactTitle"></T>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink active={page === 'contact'} href="/contact">
                 <T translationKey="contactTitle"></T>
               </NavLink>
             </li>

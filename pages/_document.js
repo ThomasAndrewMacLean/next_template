@@ -74,31 +74,13 @@ export default class MyDocument extends Document {
   href="/safari-pinned-tab.svg"
   color="#5bbad5"
 /> */}
-          <link rel="shortcut icon" href={`${prefix}/favicon.ico`} />
+          {/* <link rel="shortcut icon" href={`${prefix}/favicon.ico`} /> */}
           {/* <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
 /> */}
 
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://bumperballs.be" />
-          <meta name="twitter:title" content="bumperballs" />
-          <meta name="twitter:description" content="bumperballs" />
-          <meta
-            name="twitter:image"
-            content="https://bumperballs.be/android-chrome-192x192.png"
-          />
-          {/*
-<meta name="twitter:creator" content="@DavidWShadow" /> */}
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="bumperballs" />
-          <meta property="og:description" content="bumperballs" />
-          <meta property="og:site_name" content="bumperballs" />
-          <meta property="og:url" content="https://bumperballs.be" />
-          <meta
-            property="og:image"
-            content="https://bumperballs.be/apple-touch-icon.png"
-          />
+         
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
 

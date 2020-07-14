@@ -12,9 +12,21 @@ export const getImageUrl = (context, id, full) => {
     console.error('Picture not found!', id);
   }
   return full
-    ? context.find((p) => p.id == id) &&
-        context.find((p) => p.id == id).pic[0].url
-    : context.find((p) => p.id == id).pic[0].thumbnails.large.url;
+    ? foundPic && foundPic.pic[0].url
+    : foundPic.pic[0].thumbnails.large.url;
+};
+
+export const getSEO = (context, id) => {
+  const foundSEO = context.find((p) => p.id == id);
+
+  if (!foundSEO) {
+    console.error('SEO not found!', id);
+  }
+
+  if (!foundSEO.text && !foundSEO.pic) {
+    console.error('SEO not found!', id);
+  }
+  return foundSEO.text ? foundSEO.text : foundSEO.pic[0].url;
 };
 
 export const getDataFromAirtable = async () => {

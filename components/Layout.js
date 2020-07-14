@@ -1,12 +1,12 @@
 import React from 'react';
- import styled from 'styled-components';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { T } from '../components';
 
 const Layout = ({ children, page }) => {
   return (
     <Main>
-       
       <Header>
         <T translationKey="title"></T>
         <nav>
@@ -75,5 +75,13 @@ const Footer = styled.footer`
   justify-content: space-between;
   padding: 2rem 0;
 `;
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+  page: PropTypes.string.isRequired,
+};
 
 export default Layout;

@@ -1,11 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { T, Image, Layout } from '../components';
 import { useStore } from '../store';
 import { HELLOWORLD } from '../constants';
-import { add } from '../utils';
+import { add, getSEO } from '../utils';
 import {
   TranslationContext,
   PictureContext,
@@ -22,10 +23,30 @@ const IndexPage = ({ translations, pics, seo }) => {
           <Layout page="home">
             <Main>
               <Head>
-                <title>bumperballs</title>
+                <title>{getSEO(seo, 'title')}</title>
+                <link rel="shortcut icon" href={getSEO(seo, 'favicon')} />
                 <meta
                   name="viewport"
                   content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+                />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:url" content="https://bumperballs.be" />
+                <meta name="twitter:title" content="bumperballs" />
+                <meta name="twitter:description" content="bumperballs" />
+                <meta
+                  name="twitter:image"
+                  content="https://bumperballs.be/android-chrome-192x192.png"
+                />
+                {/*
+<meta name="twitter:creator" content="@DavidWShadow" /> */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="bumperballs" />
+                <meta property="og:description" content="bumperballs" />
+                <meta property="og:site_name" content="bumperballs" />
+                <meta property="og:url" content="https://bumperballs.be" />
+                <meta
+                  property="og:image"
+                  content="https://bumperballs.be/apple-touch-icon.png"
                 />
               </Head>
               <h1>{HELLOWORLD}</h1>
@@ -48,7 +69,60 @@ const Main = styled.main`
 
 export const getStaticProps = async () => {
   const data = await getDataFromAirtable();
-  return { props: data };
+  return {
+    props: {
+      translations: data.translations.filter((x) => x.id),
+      pics: data.pics.filter((x) => x.id),
+      seo: data.seo.filter((x) => x.id),
+    },
+  };
+};
+
+IndexPage.propTypes = {
+  translations: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      NL: PropTypes.string,
+      'NL zonder opmaak': PropTypes.string,
+    })
+  ).isRequired,
+  pics: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      pic: PropTypes.arrayOf(
+        PropTypes.shape({
+          url: PropTypes.string.isRequired,
+          thumbnails: PropTypes.shape({
+            large: PropTypes.shape({
+              url: PropTypes.string.isRequired,
+            }),
+            small: PropTypes.shape({
+              url: PropTypes.string.isRequired,
+            }),
+          }),
+        })
+      ),
+    })
+  ).isRequired,
+  seo: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      text: PropTypes.string,
+      pic: PropTypes.arrayOf(
+        PropTypes.shape({
+          url: PropTypes.string.isRequired,
+          thumbnails: PropTypes.shape({
+            large: PropTypes.shape({
+              url: PropTypes.string.isRequired,
+            }),
+            small: PropTypes.shape({
+              url: PropTypes.string.isRequired,
+            }),
+          }),
+        })
+      ),
+    })
+  ).isRequired,
 };
 
 export default IndexPage;

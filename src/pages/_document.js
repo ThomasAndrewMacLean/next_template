@@ -26,35 +26,11 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <link rel="manifest" href={`${prefix}/manifest.json`} />
+        
 
-         
-          {/* <meta
-  name="viewport"
-  content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
-/> */}
-
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href={`${prefix}/apple-touch-icon.png`}
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href={`${prefix}/favicon-32x32.png`}
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href={`${prefix}/favicon-16x16.png`}
-          />
-      
-         
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
-
+          {/* 
           <script
             dangerouslySetInnerHTML={{
               __html: `  window.addEventListener('beforeinstallprompt', function(e) {
@@ -62,7 +38,7 @@ export default class MyDocument extends Document {
                 return false;
             });`,
             }}
-          ></script>
+          ></script> */}
         </Head>
         <body>
           <Main />

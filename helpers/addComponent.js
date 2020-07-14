@@ -11,11 +11,15 @@ const capitalize = (s) => {
 };
 
 const reactComp = `import React from 'react'
+import PropTypes from 'prop-types'
 import * as Styles from './XXXXX.styles'
 const XXXXX = () => {
   return <Styles.XXXXXWrapper></Styles.XXXXXWrapper>
 }
 
+XXXXX.propTypes = {
+    
+  };
 export default XXXXX
 `;
 

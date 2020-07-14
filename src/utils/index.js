@@ -21,10 +21,12 @@ export const getSEO = (context, id) => {
 
   if (!foundSEO) {
     console.error('SEO not found!', id);
+    return '';
   }
 
   if (!foundSEO.text && !foundSEO.pic) {
     console.error('SEO not found!', id);
+    return '';
   }
   return foundSEO.text ? foundSEO.text : foundSEO.pic[0].url;
 };

@@ -27,26 +27,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="manifest" href={`${prefix}/manifest.json`} />
 
-          <meta name="application-name" content="bumperballs" />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="default"
-          />
-          <meta
-            name="apple-mobile-web-app-title"
-            content="bumperballs"
-          />
-          <meta name="description" content="bumperballs" />
-          <meta name="format-detection" content="telephone=no" />
-          <meta name="mobile-web-app-capable" content="yes" />
-          {/* <meta
-  name="msapplication-config"
-  content="/browserconfig.xml"
-/> */}
-          <meta name="msapplication-TileColor" content="#2B5797" />
-          <meta name="msapplication-tap-highlight" content="no" />
-          {/* <meta name="theme-color" content="#000000" /> */}
+         
           {/* <meta
   name="viewport"
   content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
@@ -69,17 +50,7 @@ export default class MyDocument extends Document {
             sizes="16x16"
             href={`${prefix}/favicon-16x16.png`}
           />
-          {/* <link
-  rel="mask-icon"
-  href="/safari-pinned-tab.svg"
-  color="#5bbad5"
-/> */}
-          {/* <link rel="shortcut icon" href={`${prefix}/favicon.ico`} /> */}
-          {/* <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-/> */}
-
+      
          
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}

@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export && mv .next/sw.js out/sw.js && mv .next/workbox* out"
+    "export": "next export && mv .next/sw.js out/sw.js && mv .next/workbox* out",
+    "comp": "node helpers/addComponent"
   },
   "repository": {
     "type": "git",

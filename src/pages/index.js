@@ -48,6 +48,23 @@ const IndexPage = ({ translations, pics, seo }) => {
                   property="og:image"
                   content="https://bumperballs.be/apple-touch-icon.png"
                 />
+                <meta name="application-name" content="bumperballs" />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta
+                  name="apple-mobile-web-app-status-bar-style"
+                  content="default"
+                />
+                <meta name="apple-mobile-web-app-title" content="bumperballs" />
+                <meta name="description" content="bumperballs" />
+                <meta name="format-detection" content="telephone=no" />
+                <meta name="mobile-web-app-capable" content="yes" />
+                {/* <meta
+  name="msapplication-config"
+  content="/browserconfig.xml"
+/> */}
+                <meta name="msapplication-TileColor" content="#2B5797" />
+                <meta name="msapplication-tap-highlight" content="no" />
+                <meta name="theme-color" content="#000000" />
               </Head>
               <h1>{HELLOWORLD}</h1>
               <T translationKey="test"></T>

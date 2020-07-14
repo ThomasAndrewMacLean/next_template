@@ -26,6 +26,12 @@ const Layout = ({ children, page }: LayoutProps) => {
                 <T translationKey="contactTitle"></T>
               </NavLink>
             </li>
+
+            <li>
+              <NavLink active={page === 'contact'} href={prefix + '/contact'}>
+                test
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </Header>

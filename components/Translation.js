@@ -23,7 +23,7 @@ const Translation = ({ translationKey, style }) => {
   }
 
   if (!translation) {
-    console.error('missing translation!');
+    console.error('missing translation!', translationKey);
     return null;
   }
   // fallback if we dont have a lable

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { T } from '.';
+import { prefix } from '../utils';
 
 type LayoutProps = {
   children: ReactNode;
@@ -16,12 +17,12 @@ const Layout = ({ children, page }: LayoutProps) => {
         <nav>
           <ul>
             <li>
-              <NavLink active={page === 'home'} href="/">
+              <NavLink active={page === prefix + 'home'} href="/">
                 <T translationKey="homeTitle"></T>
               </NavLink>
             </li>
             <li>
-              <NavLink active={page === 'contact'} href="/contact">
+              <NavLink active={page === prefix + 'contact'} href="/contact">
                 <T translationKey="contactTitle"></T>
               </NavLink>
             </li>

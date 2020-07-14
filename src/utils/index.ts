@@ -5,7 +5,7 @@ export const add = (a: number, b: number): number => {
 };
 
 const isProduction = process.env.NODE_ENV === 'production';
-export const prefix = isProduction ? '/bumperballs' : '';
+export const prefix = isProduction ? '/next_template' : '';
 
 export const getImageUrl = (context: any, id: string, full: boolean) => {
   const foundPic = context.find((p: any) => p.id == id);

@@ -3,7 +3,13 @@ import marked from 'marked';
 import { TranslationContext } from '../utils/contexts';
 import PropTypes from 'prop-types';
 
-const Translation = ({ translationKey, style }) => {
+const Translation = ({
+  translationKey,
+  style,
+}: {
+  translationKey: string;
+  style?: object;
+}) => {
   const [showKeys, setShowKeys] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -42,7 +48,7 @@ const Translation = ({ translationKey, style }) => {
       className={showKeys ? 'showKeys' : ''}
       dangerouslySetInnerHTML={{
         __html: marked(
-          translation && !showKeys ? translation.NL : translationKey
+          translation && !showKeys ? translation.NL! : translationKey
         ),
       }}
     ></span>
@@ -51,6 +57,7 @@ const Translation = ({ translationKey, style }) => {
 
 Translation.propTypes = {
   translationKey: PropTypes.string.isRequired,
+  style: PropTypes.object,
 };
 
 // export async function getStaticProps() {

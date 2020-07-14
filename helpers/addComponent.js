@@ -32,20 +32,20 @@ rl.question('What will be the new component ? ', function (componentName) {
   console.log(componentName);
   componentName = capitalize(componentName);
   fs.writeFileSync(
-    'src/components/' + componentName + '.js',
+    'src/components/' + componentName + '.tsx',
     reactComp.split('XXXXX').join(componentName)
   );
 
   fs.writeFileSync(
-    'src/components/' + componentName + '.styles.js',
+    'src/components/' + componentName + '.styles.ts',
     styles.split('XXXXX').join(componentName)
   );
 
-  let indexPage = fs.readFileSync('src/components/index.js', 'utf8');
+  let indexPage = fs.readFileSync('src/components/index.ts', 'utf8');
   indexPage =
     indexPage +
     `export { default as ${componentName} } from './${componentName}'\n`;
 
-  fs.writeFileSync('src/components/index.js', indexPage);
+  fs.writeFileSync('src/components/index.ts', indexPage);
   rl.close();
 });

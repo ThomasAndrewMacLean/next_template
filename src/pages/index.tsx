@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import { T, Image, Layout, SEO } from '../components';
 import { useStore } from '../store';
@@ -12,8 +12,9 @@ import {
   SEOContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
+import { TranslationsType, ImagesType, SEOType } from '../types';
 
-const IndexPage = ({ translations, pics, seo }) => {
+const IndexPage = ({ translations, pics, seo }: IndexPageProps) => {
   const { count, countPlusOne } = useStore();
   return (
     <PictureContext.Provider value={pics}>
@@ -51,51 +52,10 @@ export const getStaticProps = async () => {
   };
 };
 
-IndexPage.propTypes = {
-  translations: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      NL: PropTypes.string,
-      'NL zonder opmaak': PropTypes.string,
-    })
-  ).isRequired,
-  pics: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      pic: PropTypes.arrayOf(
-        PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          thumbnails: PropTypes.shape({
-            large: PropTypes.shape({
-              url: PropTypes.string.isRequired,
-            }),
-            small: PropTypes.shape({
-              url: PropTypes.string.isRequired,
-            }),
-          }),
-        })
-      ),
-    })
-  ).isRequired,
-  seo: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      text: PropTypes.string,
-      pic: PropTypes.arrayOf(
-        PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          thumbnails: PropTypes.shape({
-            large: PropTypes.shape({
-              url: PropTypes.string.isRequired,
-            }),
-            small: PropTypes.shape({
-              url: PropTypes.string.isRequired,
-            }),
-          }),
-        })
-      ),
-    })
-  ).isRequired,
+type IndexPageProps = {
+  translations: TranslationsType[];
+  pics: ImagesType[];
+  seo: SEOType[];
 };
 
 export default IndexPage;

@@ -2,9 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-import { prefix, getSEO } from '../utils';
+import { getSEO } from '../utils';
+import { SEOType } from '../types';
 
-const SEO = ({ seo }) => {
+const SEO = ({ seo }: { seo: SEOType[] }) => {
   return (
     <Head>
       <title>{getSEO(seo, 'title')}</title>

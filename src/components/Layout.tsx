@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { T } from '.';
 
-const Layout = ({ children, page }) => {
+type LayoutProps = {
+  children: ReactNode;
+  page: string;
+};
+const Layout = ({ children, page }: LayoutProps) => {
   return (
     <Main>
       <Header>
@@ -58,7 +62,7 @@ const Header = styled.header`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled.a<{ active: boolean }>`
   text-decoration: none;
   color: unset;
   position: relative;

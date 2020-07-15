@@ -27,7 +27,7 @@ const IndexPage = ({ translations, pics, seo }: IndexPageProps) => {
               <T translationKey="test"></T>
               <T translationKey="test2"></T>
               <button onClick={countPlusOne}>+</button>
-              <Image imageKey="hero-image"></Image>
+              <Image style={{ width: '100%' }} imageKey="hero-image"></Image>
               {count}+ 1 = {add(count, 1)}
             </Main>
           </Layout>

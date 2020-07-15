@@ -3,9 +3,14 @@ import { PictureContext } from '../utils/contexts';
 import PropTypes from 'prop-types';
 import { getImageUrl } from '../utils';
 
-const Image = ({ imageKey }: { imageKey: string }) => {
+const Image = ({ imageKey, style }: { imageKey: string; style?: object }) => {
   const pics = useContext(PictureContext);
-  return <img src={getImageUrl(pics, imageKey, true)}></img>;
+  return (
+    <img
+      style={style && { ...style }}
+      src={getImageUrl(pics, imageKey, true)}
+    ></img>
+  );
 };
 
 Image.propTypes = {

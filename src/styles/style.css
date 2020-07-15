@@ -30,3 +30,7 @@ li {
   padding-bottom: 0.5rem;
 }
 
+.showKeys {
+  background: pink !important;
+  color: red !important;
+}

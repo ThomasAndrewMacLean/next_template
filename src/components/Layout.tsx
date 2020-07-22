@@ -17,7 +17,7 @@ const Layout = ({ children, page }: LayoutProps) => {
         <T translationKey="title"></T>
         <nav>
           <ul>
-            {pages
+          {pages
               .filter((p) => p.showInNav)
               .map((pag, i) => {
                 return (
@@ -28,16 +28,7 @@ const Layout = ({ children, page }: LayoutProps) => {
                   </li>
                 );
               })}
-            {/* <li>
-              <NavLink active={page === 'home'} href={prefix + '/'}>
-                <T translationKey="homeTitle"></T>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink active={page === 'contact'} href={prefix + '/contact'}>
-                <T translationKey="contactTitle"></T>
-              </NavLink>
-            </li> */}
+        
           </ul>
         </nav>
       </Header>

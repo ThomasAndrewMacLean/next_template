@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { T } from '.';
 import { prefix } from '../utils';
+import { pages } from '../constants/pages';
 
 type LayoutProps = {
   children: ReactNode;
@@ -16,7 +17,18 @@ const Layout = ({ children, page }: LayoutProps) => {
         <T translationKey="title"></T>
         <nav>
           <ul>
-            <li>
+            {pages
+              .filter((p) => p.showInNav)
+              .map((pag, i) => {
+                return (
+                  <li key={i}>
+                    <NavLink active={page === pag.id} href={prefix + pag.url}>
+                      <T translationKey={pag.id + 'Title'}></T>
+                    </NavLink>
+                  </li>
+                );
+              })}
+            {/* <li>
               <NavLink active={page === 'home'} href={prefix + '/'}>
                 <T translationKey="homeTitle"></T>
               </NavLink>
@@ -25,7 +37,7 @@ const Layout = ({ children, page }: LayoutProps) => {
               <NavLink active={page === 'contact'} href={prefix + '/contact'}>
                 <T translationKey="contactTitle"></T>
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </Header>

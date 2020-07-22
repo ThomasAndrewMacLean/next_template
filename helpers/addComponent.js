@@ -28,7 +28,7 @@ const styles = `import styled from 'styled-components'
 export const XXXXXWrapper = styled.div\`\`
 `;
 
-rl.question('What will be the new component ? ', function (componentName) {
+rl.question('What will be the new component? ', function (componentName) {
   console.log(componentName);
   componentName = capitalize(componentName);
   fs.writeFileSync(

@@ -77,7 +77,7 @@ rl.question('What will be the new page? ', function (componentName) {
     let indexPage = fs.readFileSync('src/constants/pages.ts', 'utf8');
     indexPage = indexPage.replace('];', '');
 
-    const newPage= `{ id: '${componentName}', url: '/${componentName}', showInNav: ${showInNav.toLowerCase() !== 'n'} },\n];`
+    const newPage= `{ id: '${componentName}', url: '${componentName}', showInNav: ${showInNav.toLowerCase() !== 'n'} },\n];`
     fs.writeFileSync('src/constants/pages.ts', indexPage + newPage);
     rl.close();
   });

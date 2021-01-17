@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
-  background-color: var(--background-light);
+  background: var(--gradient);
   .content {
     display: flex;
     justify-content: space-between;

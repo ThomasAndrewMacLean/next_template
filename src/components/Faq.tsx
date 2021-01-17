@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { convertToHtml, getStructuredDataString } from '../utils';
 import * as Styles from './Faq.styles';
 import { FaqContext } from '../utils/contexts';
+import { Slider } from '.';
 
 type PropsType = {};
 const Faq = ({}: PropsType) => {
@@ -30,6 +31,47 @@ const Faq = ({}: PropsType) => {
             </details>
           );
         })}
+
+        <Slider
+          className="fullwidth"
+          sliderItems={[
+            {
+              title: 'test',
+              text: 'hellooo',
+              image: 'demo-image',
+            },
+            {
+              title: 'test',
+              text: 'hellooo',
+              image: 'demo-image',
+            },
+            {
+              title: 'test',
+              text: 'hellooo',
+              image: 'demo-image',
+            },
+            {
+              title: 'test',
+              text: 'hellooo',
+              image: 'demo-image',
+            },
+            {
+              title: 'test',
+              text: 'hellooo',
+              image: 'demo-image',
+            },
+            {
+              title: 'test',
+              text: 'hellooo',
+              image: 'demo-image',
+            },
+            {
+              title: 'test',
+              text: 'hellooo',
+              image: 'demo-image',
+            },
+          ]}
+        />
       </div>
     </Styles.FaqWrapper>
   );

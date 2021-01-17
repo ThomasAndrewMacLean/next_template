@@ -5,8 +5,8 @@ import { SliderItemType } from '../types';
 import { convertToHtml, getImageUrl } from '../utils';
 import * as Styles from './Slider.styles';
 
-type PropsType = { sliderItems: SliderItemType[] };
-const Slider = ({ sliderItems }: PropsType) => {
+type PropsType = { sliderItems: SliderItemType[]; className?: string };
+const Slider = ({ sliderItems, className }: PropsType) => {
   const sliderRef = useRef(null);
   const pics = useContext(PictureContext);
 
@@ -45,7 +45,7 @@ const Slider = ({ sliderItems }: PropsType) => {
   return (
     // TO BE CHECKED: if wrapped in fullwidth no need for another fullwidth!
     // <Styles.SliderWrapper className="fullwidth">
-    <Styles.SliderWrapper>
+    <Styles.SliderWrapper className={className}>
       <ul ref={sliderRef} className="slider">
         {(sliderItems || []).map((item, index) => {
           return (

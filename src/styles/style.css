@@ -6,6 +6,12 @@
   --background-secondary-lighter: rgba(184, 255, 169, 0.591);
   --border: 3px solid black;
   --colour-black: #333;
+  --headerHeight: 150px;
+}
+@media screen and (max-width: 750px) {
+  :root {
+    --headerHeight: 100px;
+  }
 }
 * {
   margin: 0;

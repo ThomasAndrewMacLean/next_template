@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
+import * as Styled from './Layout.styles';
 import { Header, Footer } from '.';
 import { PageNameType } from '../types';
+import { stickyHeader } from '../constants/settings';
 
 type LayoutProps = {
   children: ReactNode;
@@ -11,19 +11,14 @@ type LayoutProps = {
 };
 const Layout = ({ children, page }: LayoutProps) => {
   return (
-    <Wrap>
+    <Styled.Wrap>
       <Header page={page}></Header>
+      {stickyHeader && <Styled.Pusher />}
       {children}
       <Footer />
-    </Wrap>
+    </Styled.Wrap>
   );
 };
-
-const Wrap = styled.div`
-  margin: auto;
-  width: 90%;
-  max-width: 900px;
-`;
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([

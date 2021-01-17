@@ -4,11 +4,12 @@ import { T } from '.';
 import { prefix } from '../utils';
 import { pages } from '../constants/pages';
 import { PageNameType } from '../types';
+import { stickyHeader } from '../constants/settings';
 
 type PropsType = { page: PageNameType };
 const Header = ({ page }: PropsType) => {
   return (
-    <Styles.HeaderWrapper className="fullwidth">
+    <Styles.HeaderWrapper stickyHeader={stickyHeader} className="fullwidth">
       <div className="content">
         <T translationKey="title"></T>
         <nav>

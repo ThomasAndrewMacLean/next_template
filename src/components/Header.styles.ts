@@ -1,17 +1,24 @@
 import styled from 'styled-components';
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.header<{ stickyHeader: boolean }>`
   left: inherit !important;
+
+  //TODO get from theam
+  height: var(--headerHeight);
+  background-color: white;
+  z-index: 999;
+  position: ${(props) => props.stickyHeader && 'fixed'};
   h1 {
     font-weight: 100;
   }
-  display: flex;
-  justify-content: space-between;
-  /* padding: 4rem 0; */
 
-  background-color: white;
-  z-index: 999;
-  position: fixed;
+  .content {
+    display: flex;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   nav {
   }

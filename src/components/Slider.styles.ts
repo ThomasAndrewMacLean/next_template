@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { hideScrollBar } from '../styles/snippets';
 
 export const SliderWrapper = styled.div`
   ul {
@@ -24,13 +25,7 @@ export const SliderWrapper = styled.div`
     flex: 1;
     display: flex;
 
-    /* Hide scrollbar */
-    &::-webkit-scrollbar {
-      display: none; /* Chrome */
-    }
-    overflow: -moz-scrollbars-none; /* Firefox */
-    scrollbar-width: none; /* Firefox 64 */
-    -ms-overflow-style: none; /* IE */
+    ${hideScrollBar}
 
     .wrap {
       min-width: 400px;

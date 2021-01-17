@@ -4,14 +4,19 @@ export type TranslationsType = {
   'NL zonder opmaak'?: string;
 };
 
+type ImageType = {
+  url: string;
+  thumbnails: {
+    large: { url: string };
+  };
+};
 export type ImagesType = {
   id: string;
-  pic: {
-    url: string;
-    thumbnails: {
-      large: string;
-    };
-  }[];
+  pic: ImageType[];
+};
+export type FaqsType = {
+  Vraag: string;
+  Antwoord: string;
 };
 
 export type SEOType = {
@@ -24,3 +29,14 @@ export type SEOType = {
     };
   }[];
 };
+
+export type ComponentNameType = 'hero' | 'faq';
+
+export type DataAirtablePromiseType = Promise<{
+  props: {
+    translations: TranslationsType[];
+    pics: ImagesType[];
+    seo: SEOType[];
+    faqs: FaqsType[];
+  };
+}>;

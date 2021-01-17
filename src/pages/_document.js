@@ -28,15 +28,6 @@ export default class MyDocument extends Document {
           <link rel="manifest" href={`${prefix}/manifest.json`} />
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
-          {/* 
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `  window.addEventListener('beforeinstallprompt', function(e) {
-                e.preventDefault()
-                return false;
-            });`,
-            }}
-          ></script> */}
         </Head>
         <body>
           <Main />

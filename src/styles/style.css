@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400&display=swap');
 
 :root {
-  --background-dark: #77f;
+  --background-dark: rgb(27, 27, 249);
+  --background-light: rgb(182, 249, 154);
+  --background-secondary-lighter: rgba(184, 255, 169, 0.591);
   --border: 3px solid black;
+  --colour-black: #333;
 }
 * {
   margin: 0;
@@ -33,4 +36,66 @@ li {
 .showKeys {
   background: pink !important;
   color: red !important;
+}
+
+.btn {
+  padding: 8px 24px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  border: 2px solid var(--colour-black);
+  border-radius: 20px;
+  background-color: var(--background-secondary-lighter);
+  transition: all 300ms ease;
+  z-index: 1;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* em {
+  font-family: 'La Belle Aurore', cursive;
+} */
+
+h2 {
+  margin-bottom: 2rem;
+  font-weight: 200;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+section {
+  margin-bottom: 7rem;
+}
+
+.content {
+  padding: 4rem 0;
+}
+.fullwidth {
+  width: 100vw;
+  left: 0;
+  margin-left: calc(450px - 50vw);
+}
+
+.fullwidth .content {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+}
+@media only screen and (max-width: 1000px) {
+  .fullwidth {
+    margin-left: -5vw;
+  }
 }

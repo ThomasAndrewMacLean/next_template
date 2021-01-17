@@ -11,21 +11,33 @@ const Slider = ({ sliderItems }: PropsType) => {
   const pics = useContext(PictureContext);
 
   const slideLeft = () => {
+    const paddingLeft = window.getComputedStyle(
+      document.querySelector('.slider')!
+    ).paddingLeft;
     //@ts-ignore
     sliderRef.current.scrollBy({
       top: 0,
       left:
         //@ts-ignore
-        -sliderRef.current.scrollWidth / sliderRef.current.childElementCount,
+        -(sliderRef.current.scrollWidth - parseInt(paddingLeft)) /
+        //@ts-ignore
+        sliderRef.current.childElementCount,
       behavior: 'smooth',
     });
   };
   const slideRight = () => {
+    const paddingLeft = window.getComputedStyle(
+      document.querySelector('.slider')!
+    ).paddingLeft;
     //@ts-ignore
     sliderRef.current.scrollBy({
       top: 0,
       //@ts-ignore
-      left: sliderRef.current.scrollWidth / sliderRef.current.childElementCount,
+      left:
+        //@ts-ignore
+        (sliderRef.current.scrollWidth - parseInt(paddingLeft)) /
+        //@ts-ignore
+        sliderRef.current.childElementCount,
       behavior: 'smooth',
     });
   };
@@ -34,14 +46,16 @@ const Slider = ({ sliderItems }: PropsType) => {
     // TO BE CHECKED: if wrapped in fullwidth no need for another fullwidth!
     // <Styles.SliderWrapper className="fullwidth">
     <Styles.SliderWrapper>
-      <ul ref={sliderRef}>
+      <ul ref={sliderRef} className="slider">
         {(sliderItems || []).map((item, index) => {
           return (
             <li key={index}>
               <div
                 className="wrap"
                 style={
-                  index === Slider.length - 1 ? { marginRight: '3rem' } : {}
+                  index === sliderItems.length - 1
+                    ? { marginRight: '3rem' }
+                    : {}
                 }
               >
                 <img src={getImageUrl(pics, item.image, false)} alt="" />

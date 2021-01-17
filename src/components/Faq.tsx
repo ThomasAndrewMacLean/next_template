@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Head from 'next/head';
 
-import { getStructuredDataString } from '../utils';
+import { convertToHtml, getStructuredDataString } from '../utils';
 import * as Styles from './Faq.styles';
 import { FaqContext } from '../utils/contexts';
 
@@ -17,7 +17,20 @@ const Faq = ({}: PropsType) => {
           dangerouslySetInnerHTML={{ __html: getStructuredDataString(faqs) }}
         />
       </Head>
-      <div >faq</div>
+      <div>
+        {faqs.map((faq, index) => {
+          return (
+            <details key={index}>
+              <summary>{faq.Vraag}</summary>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: convertToHtml(faq.Antwoord),
+                }}
+              ></div>
+            </details>
+          );
+        })}
+      </div>
     </Styles.FaqWrapper>
   );
 };

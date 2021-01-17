@@ -40,3 +40,9 @@ export type DataAirtablePromiseType = Promise<{
     faqs: FaqsType[];
   };
 }>;
+
+export type SliderItemType = {
+  title: string;
+  text: string;
+  image: string;
+};

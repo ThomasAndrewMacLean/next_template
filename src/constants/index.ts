@@ -5,10 +5,4 @@ export const pageNames: { [key in PageNameType]: PageNameType } = {
   about: 'about',
 };
 
-export const homePageSections: ComponentNameType[] = [
-  'hero',
-  'hero',
-  'hero',
-  'hero',
-  'faq',
-];
+export const homePageSections: ComponentNameType[] = ['hero', 'faq'];

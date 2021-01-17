@@ -32,6 +32,8 @@ export type SEOType = {
 
 export type ComponentNameType = 'hero' | 'faq';
 
+export type PageNameType = 'home' | 'about';
+
 export type DataAirtablePromiseType = Promise<{
   props: {
     translations: TranslationsType[];

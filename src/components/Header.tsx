@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styles from './Header.styles';
-import { T } from '.';
+import { T, FadeIn } from '.';
 import { prefix } from '../utils';
 import { pages } from '../constants/pages';
 import { PageNameType } from '../types';
@@ -11,7 +11,13 @@ const Header = ({ page }: PropsType) => {
   return (
     <Styles.HeaderWrapper stickyHeader={stickyHeader} className="fullwidth">
       <div className="content">
-        <T translationKey="title"></T>
+        <FadeIn
+          // waitTime="10"
+          animationDuration="600"
+          beginStyle={{ opacity: 0, transform: 'translateY(10px)' }}
+        >
+          <T translationKey="title" className="text-gradient"></T>
+        </FadeIn>
         <nav>
           <ul>
             {pages

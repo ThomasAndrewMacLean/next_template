@@ -6,9 +6,11 @@ import PropTypes from 'prop-types';
 const Translation = ({
   translationKey,
   style,
+  className = '',
 }: {
   translationKey: string;
   style?: object;
+  className?: string;
 }) => {
   const [showKeys, setShowKeys] = useState(false);
   useEffect(() => {
@@ -45,7 +47,7 @@ const Translation = ({
   ) : (
     <span
       style={{ ...style }}
-      className={showKeys ? 'showKeys' : ''}
+      className={showKeys ? 'showKeys' : className}
       dangerouslySetInnerHTML={{
         __html: marked(
           translation && !showKeys ? translation.NL! : translationKey

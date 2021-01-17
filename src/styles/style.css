@@ -7,6 +7,12 @@
   --border: 3px solid black;
   --colour-black: #333;
   --headerHeight: 150px;
+
+  --gradient: linear-gradient(
+    to right,
+    var(--background-dark),
+    var(--background-light)
+  );
 }
 @media screen and (max-width: 750px) {
   :root {
@@ -104,4 +110,13 @@ section {
   .fullwidth {
     margin-left: -5vw;
   }
+}
+
+.text-gradient h1 {
+  font-size: 4em;
+  font-weight: bold;
+  background: var(--gradient);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }

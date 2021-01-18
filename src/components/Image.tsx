@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getImageUrl, getImageUrlPreview, getImageHeightWidth } from '../utils';
 
 const defaultStyle = {
-  display: 'inline-flex;',
+  display: 'inline-flex',
   height: 'auto',
 };
 const Image = ({

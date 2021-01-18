@@ -17,7 +17,7 @@ module.exports = {
     SENTRY: process.env.SENTRY,
   },
   assetPrefix: prefix,
-  exportTrailingSlash: true,
+  trailingSlash: true,
   exportPathMap: function () {
     return {
       '/': { page: '/' },

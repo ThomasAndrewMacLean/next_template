@@ -29,6 +29,7 @@ const Image = ({
       src={picUrl}
       className={className}
       alt={imageKey}
+      loading="lazy"
       height={getImageHeightWidth(pics, imageKey).height}
       width={getImageHeightWidth(pics, imageKey).width}
     ></img>

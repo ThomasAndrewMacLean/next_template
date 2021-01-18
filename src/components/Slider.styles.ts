@@ -29,7 +29,7 @@ export const SliderWrapper = styled.div`
 
     .wrap {
       min-width: 400px;
-      box-shadow: 10px 10px 20px -5px #00000042;
+      box-shadow: var(--shadow);
       display: flex;
       border-radius: 20px;
       overflow: hidden;

@@ -1,24 +1,36 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { PictureContext } from '../utils/contexts';
 import PropTypes from 'prop-types';
-import { getImageUrl } from '../utils';
+import { getImageUrl, getImageUrlPreview, getImageHeightWidth } from '../utils';
 
+const defaultStyle = {
+  display: 'inline-flex;',
+  height: 'auto',
+};
 const Image = ({
   imageKey,
-  style,
-  className,
+  style = {},
+  className = '',
 }: {
   imageKey: string;
   style?: object;
   className?: string;
 }) => {
   const pics = useContext(PictureContext);
+  const [picUrl, setPicUrl] = useState(getImageUrlPreview(pics, imageKey));
+
+  useEffect(() => {
+    setPicUrl(getImageUrl(pics, imageKey, true));
+  }, []);
+
   return (
     <img
-      style={style && { ...style }}
-      src={getImageUrl(pics, imageKey, true)}
+      style={{ ...defaultStyle, ...style }}
+      src={picUrl}
       className={className}
       alt={imageKey}
+      height={getImageHeightWidth(pics, imageKey).height}
+      width={getImageHeightWidth(pics, imageKey).width}
     ></img>
   );
 };

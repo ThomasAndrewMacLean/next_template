@@ -7,7 +7,9 @@ export type TranslationsType = {
 type ImageType = {
   url: string;
   thumbnails: {
-    large: { url: string };
+    full: { height: number; width: number; url: string };
+    large: { height: number; width: number; url: string };
+    small: { height: number; width: number; url: string };
   };
 };
 export type ImagesType = {

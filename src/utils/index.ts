@@ -12,13 +12,36 @@ export const convertToHtml = (input: string): string => {
   return marked(input);
 };
 
-export const getImageUrl = (context: any, id: string, full: boolean) => {
+export const getImageUrl = (
+  context: ImagesType[],
+  id: string,
+  full: boolean
+) => {
   const foundPic = context.find((p: any) => p.id == id);
 
   if (!foundPic) {
     console.error('Picture not found!', id);
   }
   return full ? foundPic?.pic[0].url : foundPic?.pic[0].thumbnails.large.url;
+};
+
+export const getImageUrlPreview = (context: ImagesType[], id: string) => {
+  const foundPic = context.find((p: any) => p.id == id);
+  if (!foundPic) {
+    console.error('Picture not found!', id);
+  }
+  return foundPic?.pic[0].thumbnails.small.url;
+};
+
+export const getImageHeightWidth = (context: ImagesType[], id: string) => {
+  const foundPic = context.find((p: any) => p.id == id);
+  if (!foundPic) {
+    console.error('Picture not found!', id);
+  }
+  return {
+    height: foundPic?.pic[0].thumbnails.small.height,
+    width: foundPic?.pic[0].thumbnails.small.width,
+  };
 };
 
 export const getSEO = (context: SEOType[], id: string) => {
@@ -61,7 +84,6 @@ export const getDataFromAirtable = async (): Promise<{
     ...dataFromAirtable,
   };
 };
-
 
 export const getStructuredDataString = (faqs: FaqsType[]): string => {
   return `{

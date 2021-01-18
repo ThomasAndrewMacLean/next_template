@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { convertToHtml, getStructuredDataString } from '../utils';
 import * as Styles from './Faq.styles';
 import { FaqContext } from '../utils/contexts';
-import { Slider } from '.';
+import { Image, Slider } from '.';
 
 type PropsType = {};
 const Faq = ({}: PropsType) => {
@@ -32,6 +32,7 @@ const Faq = ({}: PropsType) => {
           );
         })}
 
+        <Image style={{ width: '450px' }} imageKey="demo-image"></Image>
         <Slider
           className="fullwidth"
           sliderItems={[

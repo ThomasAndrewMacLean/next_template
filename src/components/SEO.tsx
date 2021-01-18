@@ -10,10 +10,8 @@ const SEO = ({ seo }: { seo: SEOType[] }) => {
     <Head>
       <title>{getSEO(seo, 'title')}</title>
       <link rel="shortcut icon" href={getSEO(seo, 'favicon')} />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-      />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content={getSEO(seo, 'url')} />

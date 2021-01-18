@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderWrapper = styled.header<{ stickyHeader: boolean }>`
   left: inherit !important;
-
-  //TODO get from theam
+  box-shadow: var(--shadow);
   height: var(--headerHeight);
   background-color: white;
   z-index: 999;

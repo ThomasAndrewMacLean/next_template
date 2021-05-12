@@ -35,7 +35,7 @@
     "marked": "^0.8.2",
     "next": "^10.0.0",
     "next-pwa": "^2.3.3",
-    "nodemailer": "^6.4.6",
+    "nodemailer": "^6.4.16",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
